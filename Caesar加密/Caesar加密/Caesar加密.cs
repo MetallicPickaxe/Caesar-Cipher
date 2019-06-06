@@ -302,106 +302,106 @@ namespace Caesar加密
 
 			// 字母
 			// 韵母“ê”
-			明文_输出.Replace("ê", "ê");
-			明文_输出.Replace("ê".ToUpperInvariant(), "ê".ToUpperInvariant());
+			明文_输出 = 明文_输出.Replace("ê", "ê");
+			明文_输出 = 明文_输出.Replace("ê".ToUpperInvariant(), "ê".ToUpperInvariant());
 			// 韵母“ü”
-			明文_输出.Replace("ü", "ü");
-			明文_输出.Replace("ü".ToUpperInvariant(), "ü".ToUpperInvariant());
+			明文_输出 = 明文_输出.Replace("ü", "ü");
+			明文_输出 = 明文_输出.Replace("ü".ToUpperInvariant(), "ü".ToUpperInvariant());
 
 			// 声调
 			// 一声-阴平
 			// 韵母“a”
-			明文_输出.Replace("ā", "ā");
-			明文_输出.Replace("ā".ToUpperInvariant(), "ā".ToUpperInvariant());
+			明文_输出 = 明文_输出.Replace("ā", "ā");
+			明文_输出 = 明文_输出.Replace("ā".ToUpperInvariant(), "ā".ToUpperInvariant());
 			// 韵母“o”
-			明文_输出.Replace("ō", "ō");
-			明文_输出.Replace("ō".ToUpperInvariant(), "ō".ToUpperInvariant());
+			明文_输出 = 明文_输出.Replace("ō", "ō");
+			明文_输出 = 明文_输出.Replace("ō".ToUpperInvariant(), "ō".ToUpperInvariant());
 			// 韵母“e”
-			明文_输出.Replace("ē", "ē");
-			明文_输出.Replace("ē".ToUpperInvariant(), "ē".ToUpperInvariant());
+			明文_输出 = 明文_输出.Replace("ē", "ē");
+			明文_输出 = 明文_输出.Replace("ē".ToUpperInvariant(), "ē".ToUpperInvariant());
 			// 韵母“ê”
 			// 中方未为“ê”制定独立的带声调符号，且现有字符中无“ê”+“̄”（长音符）的组合，故无所可替
-			//明文_输出.Replace("", "ê̄");
-			//明文_输出.Replace("".ToUpperInvariant(), "ê̄".ToUpperInvariant());
+			//明文_输出 = 明文_输出.Replace("", "ê̄");
+			//明文_输出 = 明文_输出.Replace("".ToUpperInvariant(), "ê̄".ToUpperInvariant());
 			// 韵母“i”
-			明文_输出.Replace("ī", "ī");
-			明文_输出.Replace("ī".ToUpperInvariant(), "ī".ToUpperInvariant());
+			明文_输出 = 明文_输出.Replace("ī", "ī");
+			明文_输出 = 明文_输出.Replace("ī".ToUpperInvariant(), "ī".ToUpperInvariant());
 			// 韵母“u”
-			明文_输出.Replace("ū", "ū");
-			明文_输出.Replace("ū".ToUpperInvariant(), "ū".ToUpperInvariant());
+			明文_输出 = 明文_输出.Replace("ū", "ū");
+			明文_输出 = 明文_输出.Replace("ū".ToUpperInvariant(), "ū".ToUpperInvariant());
 			// 韵母“ü”
-			明文_输出.Replace("ǖ", "ǖ");
-			明文_输出.Replace("ǖ".ToUpperInvariant(), "ǖ".ToUpperInvariant());
+			明文_输出 = 明文_输出.Replace("ǖ", "ǖ");
+			明文_输出 = 明文_输出.Replace("ǖ".ToUpperInvariant(), "ǖ".ToUpperInvariant());
 			//
 			// 二声-阳平
 			// 韵母“a”
-			明文_输出.Replace("á", "á");
-			明文_输出.Replace("á".ToUpperInvariant(), "á".ToUpperInvariant());
+			明文_输出 = 明文_输出.Replace("á", "á");
+			明文_输出 = 明文_输出.Replace("á".ToUpperInvariant(), "á".ToUpperInvariant());
 			// 韵母“o”
-			明文_输出.Replace("ó", "ó");
-			明文_输出.Replace("ó".ToUpperInvariant(), "ó".ToUpperInvariant());
+			明文_输出 = 明文_输出.Replace("ó", "ó");
+			明文_输出 = 明文_输出.Replace("ó".ToUpperInvariant(), "ó".ToUpperInvariant());
 			// 韵母“e”
-			明文_输出.Replace("é", "é");
-			明文_输出.Replace("é".ToUpperInvariant(), "é".ToUpperInvariant());
+			明文_输出 = 明文_输出.Replace("é", "é");
+			明文_输出 = 明文_输出.Replace("é".ToUpperInvariant(), "é".ToUpperInvariant());
 			// 韵母“ê”
-			明文_输出.Replace("ế", "ê̄");
-			明文_输出.Replace("ế".ToUpperInvariant(), "ê̄".ToUpperInvariant());
+			明文_输出 = 明文_输出.Replace("ế", "ê̄");
+			明文_输出 = 明文_输出.Replace("ế".ToUpperInvariant(), "ê̄".ToUpperInvariant());
 			// 韵母“i”
-			明文_输出.Replace("í", "í");
-			明文_输出.Replace("í".ToUpperInvariant(), "í".ToUpperInvariant());
+			明文_输出 = 明文_输出.Replace("í", "í");
+			明文_输出 = 明文_输出.Replace("í".ToUpperInvariant(), "í".ToUpperInvariant());
 			// 韵母“u”
-			明文_输出.Replace("ú", "ú");
-			明文_输出.Replace("ú".ToUpperInvariant(), "ú".ToUpperInvariant());
+			明文_输出 = 明文_输出.Replace("ú", "ú");
+			明文_输出 = 明文_输出.Replace("ú".ToUpperInvariant(), "ú".ToUpperInvariant());
 			// 韵母“ü”
-			明文_输出.Replace("ǘ", "ǘ");
-			明文_输出.Replace("ǘ".ToUpperInvariant(), "ǘ".ToUpperInvariant());
+			明文_输出 = 明文_输出.Replace("ǘ", "ǘ");
+			明文_输出 = 明文_输出.Replace("ǘ".ToUpperInvariant(), "ǘ".ToUpperInvariant());
 			//
 			// 三声-上声
 			// 韵母“a”
-			明文_输出.Replace("ǎ", "ǎ");
-			明文_输出.Replace("ǎ".ToUpperInvariant(), "ǎ".ToUpperInvariant());
+			明文_输出 = 明文_输出.Replace("ǎ", "ǎ");
+			明文_输出 = 明文_输出.Replace("ǎ".ToUpperInvariant(), "ǎ".ToUpperInvariant());
 			// 韵母“o”
-			明文_输出.Replace("ǒ", "ǒ");
-			明文_输出.Replace("ǒ".ToUpperInvariant(), "ǒ".ToUpperInvariant());
+			明文_输出 = 明文_输出.Replace("ǒ", "ǒ");
+			明文_输出 = 明文_输出.Replace("ǒ".ToUpperInvariant(), "ǒ".ToUpperInvariant());
 			// 韵母“e”
-			明文_输出.Replace("ě", "ě");
-			明文_输出.Replace("ě".ToUpperInvariant(), "ě".ToUpperInvariant());
+			明文_输出 = 明文_输出.Replace("ě", "ě");
+			明文_输出 = 明文_输出.Replace("ě".ToUpperInvariant(), "ě".ToUpperInvariant());
 			// 韵母“ê”
 			// 中方未为“ê”制定独立的带声调符号，且现有字符中无“ê”+“̌”（抑扬符）的组合，故无所可替
-			//明文_输出.Replace("", "ê̌");
-			//明文_输出.Replace("".ToUpperInvariant(), "ê̌".ToUpperInvariant());
+			//明文_输出 = 明文_输出.Replace("", "ê̌");
+			//明文_输出 = 明文_输出.Replace("".ToUpperInvariant(), "ê̌".ToUpperInvariant());
 			// 韵母“i”
-			明文_输出.Replace("ǐ", "ǐ");
-			明文_输出.Replace("ǐ".ToUpperInvariant(), "ǐ".ToUpperInvariant());
+			明文_输出 = 明文_输出.Replace("ǐ", "ǐ");
+			明文_输出 = 明文_输出.Replace("ǐ".ToUpperInvariant(), "ǐ".ToUpperInvariant());
 			// 韵母“u”
-			明文_输出.Replace("ǔ", "ǔ");
-			明文_输出.Replace("ǔ".ToUpperInvariant(), "ǔ".ToUpperInvariant());
+			明文_输出 = 明文_输出.Replace("ǔ", "ǔ");
+			明文_输出 = 明文_输出.Replace("ǔ".ToUpperInvariant(), "ǔ".ToUpperInvariant());
 			// 韵母“ü”
-			明文_输出.Replace("ǚ", "ǚ");
-			明文_输出.Replace("ǚ".ToUpperInvariant(), "ǚ".ToUpperInvariant());
+			明文_输出 = 明文_输出.Replace("ǚ", "ǚ");
+			明文_输出 = 明文_输出.Replace("ǚ".ToUpperInvariant(), "ǚ".ToUpperInvariant());
 			//
 			// 四声-去声
 			// 韵母“a”
-			明文_输出.Replace("à", "à");
-			明文_输出.Replace("à".ToUpperInvariant(), "à".ToUpperInvariant());
+			明文_输出 = 明文_输出.Replace("à", "à");
+			明文_输出 = 明文_输出.Replace("à".ToUpperInvariant(), "à".ToUpperInvariant());
 			// 韵母“o”
-			明文_输出.Replace("ò", "ò");
-			明文_输出.Replace("ò".ToUpperInvariant(), "ò".ToUpperInvariant());
+			明文_输出 = 明文_输出.Replace("ò", "ò");
+			明文_输出 = 明文_输出.Replace("ò".ToUpperInvariant(), "ò".ToUpperInvariant());
 			// 韵母“e”
-			明文_输出.Replace("è", "è");
-			明文_输出.Replace("è".ToUpperInvariant(), "è".ToUpperInvariant());
+			明文_输出 = 明文_输出.Replace("è", "è");
+			明文_输出 = 明文_输出.Replace("è".ToUpperInvariant(), "è".ToUpperInvariant());
 			// 韵母“ê”
-			明文_输出.Replace("ề", "ề");
-			明文_输出.Replace("ề".ToUpperInvariant(), "ề".ToUpperInvariant());
+			明文_输出 = 明文_输出.Replace("ề", "ề");
+			明文_输出 = 明文_输出.Replace("ề".ToUpperInvariant(), "ề".ToUpperInvariant());
 			// 韵母“i”
-			明文_输出.Replace("ì", "ì");
-			明文_输出.Replace("ì".ToUpperInvariant(), "ì".ToUpperInvariant());
+			明文_输出 = 明文_输出.Replace("ì", "ì");
+			明文_输出 = 明文_输出.Replace("ì".ToUpperInvariant(), "ì".ToUpperInvariant());
 			// 韵母“u”
-			明文_输出.Replace("ù", "ù");
-			明文_输出.Replace("ù".ToUpperInvariant(), "ù".ToUpperInvariant());
+			明文_输出 = 明文_输出.Replace("ù", "ù");
+			明文_输出 = 明文_输出.Replace("ù".ToUpperInvariant(), "ù".ToUpperInvariant());
 			// 韵母“ü”
-			明文_输出.Replace("ǜ", "ǜ");
-			明文_输出.Replace("ǜ".ToUpperInvariant(), "ǜ".ToUpperInvariant());
+			明文_输出 = 明文_输出.Replace("ǜ", "ǜ");
+			明文_输出 = 明文_输出.Replace("ǜ".ToUpperInvariant(), "ǜ".ToUpperInvariant());
 
 			return 明文_输出;
 		}
