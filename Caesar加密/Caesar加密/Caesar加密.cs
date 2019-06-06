@@ -94,6 +94,9 @@ namespace Caesar加密
 				// 占位
 			}
 
+			// 预处理
+			明文_输入 = 格式化明文(明文_输入);
+
 			// 定义
 			List<String> 处理明文 = 分词(明文_输入);
 			StringBuilder 处理密文_输出 = new StringBuilder();
@@ -116,7 +119,7 @@ namespace Caesar加密
 			String 处理字母 = default;		// 避免无实例可判定
 			Int32 索引 = (明文_输入.Length >= 2) ? Next(default) : ZeroIndexed(明文_输入.Length);		// ∈ [2, +∞) | 1
 			Int32 剩余明文 = default;
-			Int32 步进 = default;
+			Int32 步进 = 最大字母长度;
 			
 			//if(明文_输入.Length >= 2)		// ∈ [2, +∞)
 			//{
