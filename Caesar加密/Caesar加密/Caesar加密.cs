@@ -85,6 +85,14 @@ namespace Caesar加密
 		public StringBuilder 加密(String 明文_输入)
 		{
 			// ！合法性检测
+			if(String.IsNullOrEmpty(明文_输入))
+			{
+				return default;
+			}
+			else
+			{
+				// 占位
+			}
 
 			// 定义
 			List<String> 处理明文 = 分词(明文_输入);
@@ -106,18 +114,23 @@ namespace Caesar加密
 
 			List<String> 明文词组_输出 = new List<String>();
 			String 处理字母 = default;		// 避免无实例可判定
-			Int32 索引 = default;
+			Int32 索引 = (明文_输入.Length >= 2) ? Next(default) : ZeroIndexed(明文_输入.Length);		// ∈ [2, +∞) | 1
+			Int32 剩余明文 = default;
+			Int32 步进 = default;
 			
-			if(明文_输入.Length >= 2)		// ∈ [2, +∞)
-			{
+			//if(明文_输入.Length >= 2)		// ∈ [2, +∞)
+			//{
 				// 初始值是0-Indexed下越过了1st值，故使用Next()而非OneIOneIndexed()、字面常量1
-				for(索引 = Next(default); 索引 <= ZeroIndexed(明文_输入.Length); 索引 += 获取步进(处理字母))
+				for(索引 = Next(default); 索引 <= ZeroIndexed(明文_输入.Length); 索引 += 步进)
 				{
 					// 预处理
-					if(String.IsNullOrEmpty(处理字母))		// 1st次，即null
-																			// 其余情况为Empty，主要为补充每组判断的字母中的字符到最大字母长度
-																			// 可省略，但需要避开null被调用Length引发异常|设置默认值为String.Empty
+					剩余明文 = ZeroIndexed(明文_输入.Length) - 索引;
+					//
+					//
+					if(步进 == 最大字母长度)		// 1st次 + “取空”情况
 					{
+						// ！最大字母长度超过2时逻辑需要加装for()保持简洁
+
 						处理字母 = 明文_输入[Previous(索引)].ToString();
 					}
 					else
@@ -137,54 +150,73 @@ namespace Caesar加密
 					}
 					else		// 非组合的字母
 					{
-						// 不是组合的字母，则前一个必然是单字符字母，直接处理
-						明文词组_输出.Add(处理字母[default].ToString());
+						do
+						{
+							// 不是组合的字母，则前一个必然是单字符字母，直接处理
+							明文词组_输出.Add(处理字母[default].ToString());
+
+							// 终处理
+							// 后一个字符等待下次组合判断
+							处理字母 = 处理字母.Remove(default, OneIndexed(default));		// 移除首字符
+						}
+						while
+						(
+							剩余明文 == default
+							&& String.IsNullOrEmpty(处理字母) == false
+						);		// 针对更大的“最大字母长度”加装的循环处理
 
 						// 终处理
-						// 后一个字符等待下次组合判断
-						处理字母 = 处理字母[^OneIndexed(default)].ToString();		// last
-																												// ！右序索引是1-Indexed
-																												// 仅此处向下次循环提供“不清〇”的“处理字母”
+						if(String.IsNullOrEmpty(处理字母))
+						{
+							break;
+						}
+						else		// 仅此处向下次循环提供“不清〇”的“处理字母”
+						{
+							// 占位
+						}
 					}
+
+					// 终处理
+					步进 = 获取步进(处理字母, 剩余明文);
 				}
 
 				// 处理奇数个情况中的Last字符
 				// 其实也可以用“处理字母.Length == default”判断
-				if(Is奇数(明文_输入))
-				{
-					// 预处理
-					索引 = Previous(索引);		// 回调1，若为奇数则这是last
-					处理字母 += 明文_输入[索引].ToString();		// 2种情况：null+字符、字符+字符（2个单字符字母、1个组合的字母）
+				//if(Is奇数(明文_输入))
+				//{
+				//	// 预处理
+				//	索引 = Previous(索引);		// 回调1，若为奇数则这是last
+				//	处理字母 += 明文_输入[索引].ToString();		// 2种情况：null+字符、字符+字符（2个单字符字母、1个组合的字母）
 
-					if(Is字母(处理字母))		// 仅判断该双字母|多字母组合的字符是否合法
-														// 组合的字母
-					{
-						明文词组_输出.Add(处理字母);
-					}
-					else		// 非组合的字母
-					{
-						// 不是组合的字符，则前一个必然是单字符字母，直接处理
-						明文词组_输出.Add(处理字母[default].ToString());
-						// 后一个字符是last单字符字母，直接处理
-						明文词组_输出.Add(处理字母[^OneIndexed(default)].ToString());		// last
-																															// ！右序索引是1-Indexed
-					}
+				//	if(Is字母(处理字母))		// 仅判断该双字母|多字母组合的字符是否合法
+				//										// 组合的字母
+				//	{
+				//		明文词组_输出.Add(处理字母);
+				//	}
+				//	else		// 非组合的字母
+				//	{
+				//		// 不是组合的字符，则前一个必然是单字符字母，直接处理
+				//		明文词组_输出.Add(处理字母[default].ToString());
+				//		// 后一个字符是last单字符字母，直接处理
+				//		明文词组_输出.Add(处理字母[^OneIndexed(default)].ToString());		// last
+				//																											// ！右序索引是1-Indexed
+				//	}
 
-					// 终处理
-					//处理字符 = default;
-				}
-				else		// 偶数的情况
-				{
-					// 占位
-				}
-			}
-			else		// ∈ [0, 1]
-			{
-				明文词组_输出.Add(处理字母);
+				//	// 终处理
+				//	//处理字符 = default;
+				//}
+				//else		// 偶数的情况
+				//{
+				//	// 占位
+				//}
+			//}
+			//else		// ∈ [0, 1]
+			//{
+			//	明文词组_输出.Add(处理字母);
 
-				// 终处理
-				//处理字符 = String.Empty;
-			}
+			//	// 终处理
+			//	//处理字符 = String.Empty;
+			//}
 
 			return 明文词组_输出;
 		}
@@ -203,7 +235,7 @@ namespace Caesar加密
 				if(Is韵母(明文字符_输入.ToLowerInvariant()))		// 韵母
 																						// 规划|实际只有单字符字母
 				{
-					索引 = 韵母表.IndexOf(明文字符_输入);
+					索引 = 韵母表.IndexOf(明文字符_输入.ToLowerInvariant());
 					处理字母 = 韵母表[获取密文字符索引(索引, 韵母表.Count)];
 				}
 				else if(Is声母(明文字符_输入.ToLowerInvariant()))		// 声母
@@ -216,11 +248,29 @@ namespace Caesar加密
 					// 占位
 				}
 
-				foreach(Char 字符 in 处理字母)
-				{
-					处理字符 = 字符;
+				// 预处理
+				索引 = default;
 
-					if(Char.IsUpper(字符))		// [索引]字符是大写字母
+				foreach(Char 字符 in 处理字母)		// 映射情况：
+																	// 序号			明文字母字符		密文字母字符		明文字母大小写情况		密文大小写情况
+																	// 1.				1						1						X									X
+																	// 2.				1						1						x									x
+																	// 3.				1						2						X									Xx
+																	// 4.				1						2						x									xx
+																	// 5.				2						1						XX								Xx
+																	// 6.				2						1						Xx									Xx
+																	// 7.				2						1						xX									xx
+																	// 8.				2						1						xx									xx
+																	// 9.				2						2						XX								Xx
+																	// 10.			2						2						Xx									Xx
+																	// 11.			2						2						xX									xx
+																	// 12.			2						2						xx									xx
+				{
+					if
+					(
+						索引 <= ZeroIndexed(明文字符_输入.Length)		// 防止1 → 2时大小写参照用的明文字母索引越界
+						&& Char.IsUpper(明文字符_输入[索引])
+					)		// [索引]字符是大写字母
 					{
 						密文字符_输出 += 字符.ToString().ToUpperInvariant();		// [索引]字符大写
 					}
@@ -228,6 +278,9 @@ namespace Caesar加密
 					{
 						密文字符_输出 += 字符.ToString();
 					}
+
+					// 终处理
+					索引++;
 				}
 			}
 			else		// 其他符号：原样输出
@@ -251,7 +304,7 @@ namespace Caesar加密
 			// 韵母“ü”
 			明文_输出.Replace("ü", "ü");
 			明文_输出.Replace("ü".ToUpperInvariant(), "ü".ToUpperInvariant());
-			// 分别是：一声-阴平（长音符，U+0304，Combining Macron）、二声-阳平（尖音符|锐音符，U+0301，Combining Acute Accent）、三声-上声（抑扬符，U+030C，Combining Caron）、四声-去声（重音符|抑音符，U+0300，Combining Grave Accent）、轻声（间隔符，U+00B7，Middle Dot）、“帽子”（扬抑符，U+0302，Combining Circumflex Accent）、“两点”（分音符，U+0308，Combining Diaeresis）
+
 			// 声调
 			// 一声-阴平
 			// 韵母“a”
@@ -406,13 +459,20 @@ namespace Caesar加密
 			return 内容_输出;
 		}
 		//
-		private Int32 获取步进(String 决定值_输入)
+		private Int32 获取步进(String 决定值_输入, Int32 余值_输入)
 		{
 			Int32 步进_输出 = default;
 
 			if(String.IsNullOrEmpty(决定值_输入))
 			{
-				步进_输出 = 最大字母长度;
+				if(余值_输入 >= 最大字母长度)
+				{
+					步进_输出 = 最大字母长度;
+				}
+				else
+				{
+					步进_输出 = 余值_输入;
+				}
 			}
 			else
 			{
