@@ -69,7 +69,7 @@ namespace Caesar加密
 		//
 		// 声调表
 		// 完善版
-		private List<String> 声调表 = new List<String> {@$"̄", "́", "̌", "̀", "·", "̂", "̈"};		// 分别是：一声-阴平（长音符，U+0304，Combining Macron）、二声-阳平（尖音符|锐音符，U+0301，Combining Acute Accent）、三声-上声（抑扬符，U+030C，Combining Caron）、四声-去声（重音符|抑音符，U+0300，Combining Grave Accent）、轻声（间隔符，U+00B7，Middle Dot）、“帽子”（扬抑符，U+0302，Combining Circumflex Accent）、“两点”（分音符，U+0308，Combining Diaeresis）
+		private List<String> 声调表 = new List<String> {"̄", "́", "̌", "̀", "·", "̂", "̈"};		// 分别是：一声-阴平（长音符，U+0304，Combining Macron）、二声-阳平（尖音符|锐音符，U+0301，Combining Acute Accent）、三声-上声（抑扬符，U+030C，Combining Caron）、四声-去声（重音符|抑音符，U+0300，Combining Grave Accent）、轻声（间隔符，U+00B7，Middle Dot）、“帽子”（扬抑符，U+0302，Combining Circumflex Accent）、“两点”（分音符，U+0308，Combining Diaeresis）
 		#endregion
 		#region 变量
 		// 变量
